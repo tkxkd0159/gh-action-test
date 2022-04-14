@@ -1,0 +1,20 @@
+name: 'Auto img tag updater for repo'
+author: Victor Lee
+description: 'N/A'
+
+inputs:
+  tags:
+    description: "Docker Hub image tag"
+    required: true
+
+  dhname:
+    description: "Docker Hub user name"
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'award'
+  color: 'green'
