@@ -1,0 +1,27 @@
+image:
+  repository: a41ventures/carina
+  pullPolicy: IfNotPresent
+  tag: sha-e4f159f
+  secret: regcred
+
+keyring_backend: "test"
+home: "/root/.novachain"
+
+node:
+  chainid: testnet
+  svcname: nova-node-1
+  api:
+    port: 1317
+  grpc:
+    port: 9090
+  p2p:
+    port: 26656
+  rpc:
+    port: 26657
+  confmap:
+    prefix: novachain-config
+    name: validator1
+
+storage:
+  sizeLimit: "20Gi"
+  pvcSizeLimit: "20Gi"
