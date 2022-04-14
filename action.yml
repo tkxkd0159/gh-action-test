@@ -3,6 +3,10 @@ author: Victor Lee
 description: 'N/A'
 
 inputs:
+  A41_PAT:
+    description: "PAT to access Carina org"
+    required: true
+
   tags:
     description: "Docker Hub image tag"
     required: true

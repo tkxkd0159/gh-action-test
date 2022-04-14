@@ -6,10 +6,11 @@ import base64
 
 
 if __name__ == "__main__":
-    load_dotenv()
-    gh_pat = os.getenv("A41_PAT")
-    dh_img_tag = os.getenv("tags")
+    # load_dotenv()
+    gh_pat = os.getenv("INPUT_A41_PAT")
+    dh_img_tag = os.getenv("INPUT_TAGS")
 
+    print(gh_pat, dh_img_tag, os.getenv("INPUT_DHNAME"))
 
     g = Github(gh_pat)
     repo = g.get_repo("Carina-labs/helm-charts")
@@ -22,5 +23,3 @@ if __name__ == "__main__":
     repo.update_file(path=contents.path, message="Update my img tag",
                      content=new_vyml, sha=contents.sha, branch="test/img-update",
                      committer=bot)
-
-    print(os.getenv("dhname"), dh_img_tag)
